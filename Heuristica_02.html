@@ -1,0 +1,923 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>UC16 — 2ª Heurística de Nielsen</title><style>
+:root{--ink:#14243b;--muted:#54657b;--blue:#285ad6;--teal:#087f8c;--line:#dfe6f0;--paper:#fff;--soft:#f5f8fc}
+.uc16{font-family:Inter,'Segoe UI',Arial,sans-serif;color:var(--ink);font-size:16px;line-height:1.78;max-width:1080px;margin:auto}
+.uc16 *{box-sizing:border-box}.uc16 h1,.uc16 h2,.uc16 h3{line-height:1.23;letter-spacing:-.025em}.uc16 h1{font-size:2.75rem;margin:.55em 0}.uc16 h2{font-size:1.85rem;margin:0 0 1rem}.uc16 h3{font-size:1.22rem;margin:1.7rem 0 .6rem}.uc16 p{margin:.85rem 0 1.1rem}.uc16 .hero{background:linear-gradient(130deg,#102344 0%,#234f9d 72%,#0b7782 100%);color:white;padding:3.5rem 3.1rem;border-radius:22px;margin:1.5rem 0 2.4rem}.uc16 .hero h1{color:white}.uc16 .hero p{color:#e5eeff}.uc16 .eyebrow{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;font-weight:750;color:#2d65cc}.uc16 .hero .eyebrow{color:#9ce4e8}.uc16 .lead{font-size:1.15rem;max-width:850px}.uc16 .chapter{border-top:5px solid #245fd4;margin:3.5rem 0 1.7rem;padding:1.7rem 0 0}.uc16 .chapter .eyebrow{display:block;margin-bottom:.55rem}.uc16 .panel{background:#f4f7fc;border:1px solid #dce5f2;border-radius:15px;padding:1.35rem 1.6rem;margin:1.5rem 0}.uc16 .panel strong,.uc16 strong{color:#173e82}.uc16 .warning{border-left:5px solid #d28a32;background:#fff8ed;padding:1rem 1.4rem;margin:1.5rem 0;border-radius:0 12px 12px 0}.uc16 .insight{border-left:5px solid #0f8b8d;background:#edfafa;padding:1rem 1.4rem;margin:1.5rem 0;border-radius:0 12px 12px 0}.uc16 .quote{font-size:1.25rem;line-height:1.5;font-weight:650;padding:1.1rem 1.4rem;border-left:5px solid #3769d1;margin:1.5rem 0;background:#f4f7fd}.uc16 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin:1.4rem 0}.uc16 .card{background:white;border:1px solid #dae2ed;border-radius:14px;padding:1.25rem 1.45rem}.uc16 .card h3{margin-top:.15rem}.uc16 .step{margin:1.5rem 0;padding:1.25rem 1.5rem;border:1px solid #dce5f2;border-radius:14px;background:white}.uc16 .step .eyebrow{display:block}.uc16 table{width:100%;border-collapse:collapse;margin:1.4rem 0;font-size:.95rem}.uc16 th{background:#173f82;color:white;text-align:left}.uc16 th,.uc16 td{padding:.85rem .95rem;border:1px solid #dce5f2;vertical-align:top}.uc16 tr:nth-child(even) td{background:#f4f7fc}.uc16 .figure{border:1px solid #dce5f2;border-radius:14px;overflow:hidden;margin:1.4rem 0;background:#fff}.uc16 .figure-head{padding:.7rem 1rem;background:#ecf2fa;font-size:.82rem;color:#465c79;text-transform:uppercase;letter-spacing:.08em;font-weight:700}.uc16 .figure-body{padding:1.4rem}.uc16 .tag{display:inline-block;background:#e8efff;color:#2252ae;border-radius:7px;font-size:.78rem;padding:.2rem .6rem;font-weight:700}.uc16 .button-demo{display:inline-block;padding:.65rem 1.2rem;border-radius:8px;color:white;background:#285ad6;font-weight:700}.uc16 .button-danger{background:#bf394b}.uc16 .button-outline{background:#fff;color:#314660;border:1px solid #aebcd0}.uc16 .form-field{border:1px solid #bdc9d9;border-radius:8px;padding:.6rem .8rem;max-width:300px}.uc16 .error{border-color:#cb4055;color:#a92d43}.uc16 .divider{height:1px;background:#dce5f2;margin:2rem 0}.uc16 .image-feature{background:#fff;border:1px solid #dce5f2;border-radius:20px;overflow:hidden;margin:1.6rem 0 2.1rem;box-shadow:0 12px 32px rgba(25,54,108,.07)}.uc16 .image-feature img{display:block;width:100%;height:auto;object-fit:contain;background:#fff}.uc16 .image-feature figcaption{font-size:.88rem;line-height:1.5;color:#50627d;padding:.85rem 1.25rem;background:#f7f9fd;border-top:1px solid #e4eaf4}.uc16 .footer{font-size:.88rem;color:#54657b;border-top:1px solid #dce5f2;padding:1.4rem 0 2rem;margin-top:3rem}.uc16 code{background:#e9edf4;padding:.12rem .4rem;border-radius:5px}.uc16 ul,.uc16 ol{padding-left:1.5rem}.uc16 li{margin:.4rem 0}@media(max-width:720px){.uc16 .grid{grid-template-columns:1fr}.uc16 .hero{padding:2rem 1.3rem}.uc16 h1{font-size:2.15rem}.uc16 th,.uc16 td{padding:.55rem}}
+body{margin:0;background:#f5f8fc;padding:24px}.uc16{background:white;padding:24px 48px 40px;border-radius:20px;box-shadow:0 8px 40px #18345b0d}.uc16 blockquote{margin:1.5rem 0;padding:1rem 1.4rem;background:#f4f7fd;border-left:5px solid #3769d1;font-weight:600}.uc16 pre{overflow:auto;background:#14243b;color:#e9f1ff;padding:1.2rem;border-radius:12px;line-height:1.55;font-size:.9rem}.uc16 pre code{background:transparent;color:inherit;padding:0}.uc16 a{color:#245fd4}.uc16 td img{vertical-align:middle}.uc16 .hero strong{color:white}.uc16 .hero blockquote{background:#ffffff14;border-color:#9ce4e8;color:white}.uc16 hr{border:0;border-top:1px solid #dce5f2;margin:2rem 0}.uc16 table{display:table}.uc16 input[type=checkbox]{accent-color:#285ad6}@media(max-width:720px){body{padding:8px}.uc16{padding:12px}.uc16 table{display:block;overflow-x:auto}.uc16 .hero{margin-top:0}}@media print{body{padding:0;background:white}.uc16{padding:0;box-shadow:none;max-width:none}.uc16 .chapter{break-after:avoid}.uc16 tr,.uc16 blockquote{break-inside:avoid}*{print-color-adjust:exact;-webkit-print-color-adjust:exact}}</style></head><body><main class="uc16"><section class="hero"><div class="eyebrow">Senac · Técnico em Desenvolvimento de Sistemas · UC16</div>
+<h1>2ª
+Heurística de Nielsen: Correspondência entre o sistema e o mundo
+real</h1>
+<p><strong>Senac | Técnico em Desenvolvimento de Sistemas</strong><br />
+Material de estudo e prática — Análise de interfaces, ícones, linguagem
+e redesign no Figma.</p>
+<blockquote>
+<p>Uma interface deve falar a língua de quem a utiliza, não a língua de
+quem a desenvolveu.</p>
+</blockquote>
+</section><h2 id="o-que-você-aprenderá">O que você aprenderá</h2>
+<p>Nesta aula, vamos compreender como palavras, símbolos, metáforas,
+formatos de informação e a organização de tarefas influenciam a
+facilidade de uso de um sistema. Você aprenderá a identificar situações
+em que uma interface exige conhecimentos desnecessários do usuário e a
+propor soluções que respeitem suas expectativas.</p>
+<hr />
+<section class="chapter"><span class="eyebrow">Heurística 02 · Material de estudo</span><h2 id="1-o-que-diz-a-segunda-heurística">1. O que diz a segunda
+heurística?</h2></section>
+<p>A interface deve utilizar palavras, expressões e conceitos familiares
+ao seu público, evitando termos internos do sistema quando eles não
+forem necessários. As informações devem seguir convenções do mundo real
+e aparecer em uma ordem natural e lógica.</p>
+<p>Imagine entrar em uma loja e perguntar onde ficam os produtos. O
+vendedor responde: “Acesse o módulo de consulta de entidades
+comercializáveis”. Embora a frase possa fazer sentido, ela torna uma
+tarefa simples desnecessariamente complicada.</p>
+<p>Em um site, acontece a mesma coisa quando o botão que deveria dizer
+<strong>Ver produtos</strong> apresenta o texto <strong>Consultar
+registros comerciais</strong>.</p>
+<p>A segunda heurística envolve quatro aspectos principais:</p>
+<ul>
+<li>Linguagem próxima da realidade do público.</li>
+<li>Ícones e símbolos com significados reconhecíveis.</li>
+<li>Metáforas que relacionam conceitos digitais a experiências
+conhecidas.</li>
+<li>Informações e tarefas organizadas de maneira natural.</li>
+</ul>
+<section class="chapter"><span class="eyebrow">Heurística 02 · Material de estudo</span><h2 id="2-o-sistema-deve-falar-a-língua-do-usuário">2. O sistema deve
+falar a língua do usuário</h2></section>
+<p>Quem cria uma interface conhece a organização interna do sistema. Quem utiliza o produto normalmente deseja comprar, estudar, agendar, conversar ou resolver algum problema.</p>
+<p>O usuário não precisa conhecer a implementação para conseguir
+utilizar suas funcionalidades.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Linguagem interna ou pouco clara</th>
+<th>Linguagem próxima do usuário</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Efetuar autenticação</td>
+<td>Entrar</td>
+</tr>
+<tr class="even">
+<td>Encerrar sessão autenticada</td>
+<td>Sair da conta</td>
+</tr>
+<tr class="odd">
+<td>Persistir entidade</td>
+<td>Salvar</td>
+</tr>
+<tr class="even">
+<td>Atualizar credenciais</td>
+<td>Alterar senha</td>
+</tr>
+<tr class="odd">
+<td>Consultar registros de produtos</td>
+<td>Ver produtos</td>
+</tr>
+<tr class="even">
+<td>Inserir entidade cliente</td>
+<td>Cadastrar cliente</td>
+</tr>
+<tr class="odd">
+<td>Remover item da coleção</td>
+<td>Remover dos favoritos</td>
+</tr>
+<tr class="even">
+<td>Executar transação financeira</td>
+<td>Realizar pagamento</td>
+</tr>
+<tr class="odd">
+<td>Consultar histórico transacional</td>
+<td>Ver histórico de compras</td>
+</tr>
+<tr class="even">
+<td>Inicializar procedimento de reserva</td>
+<td>Fazer reserva</td>
+</tr>
+<tr class="odd">
+<td>Exportar conjunto de registros</td>
+<td>Baixar relatório</td>
+</tr>
+<tr class="even">
+<td>Efetuar upload de mídia</td>
+<td>Enviar foto</td>
+</tr>
+<tr class="odd">
+<td>Gerenciar preferências de notificação</td>
+<td>Escolher quais notificações receber</td>
+</tr>
+<tr class="even">
+<td>Consultar disponibilidade temporal</td>
+<td>Ver horários disponíveis</td>
+</tr>
+</tbody>
+</table>
+<h3 id="21-um-exemplo-de-formulário">2.1. Um exemplo de formulário</h3>
+<div style="display:flex;flex-wrap:wrap;gap:16px;font-family:Arial,sans-serif;margin:20px 0">
+<div style="flex:1;min-width:240px;border:1px solid #dce5f2;border-radius:14px;padding:20px;background:#f5f8fc;color:#14243b">
+<strong style="color:#a83245">Interface pouco familiar</strong>
+<h3>Inserção de entidade</h3>
+<p>Identificador nominal</p><div style="border:1px solid #aebcd0;padding:10px;background:white;border-radius:6px">&nbsp;</div>
+<p>Endereço eletrônico</p><div style="border:1px solid #aebcd0;padding:10px;background:white;border-radius:6px">&nbsp;</div>
+<p>Credencial de acesso</p><div style="border:1px solid #aebcd0;padding:10px;background:white;border-radius:6px">&nbsp;</div>
+<p><span style="background:#52657b;color:white;padding:10px 18px;border-radius:7px;display:inline-block">Persistir entidade</span></p>
+</div>
+<div style="flex:1;min-width:240px;border:1px solid #dce5f2;border-radius:14px;padding:20px;background:#f5f8fc;color:#14243b">
+<strong style="color:#087f8c">Interface próxima do usuário</strong>
+<h3>Criar conta</h3>
+<p>Nome completo</p><div style="border:1px solid #aebcd0;padding:10px;background:white;border-radius:6px">&nbsp;</div>
+<p>E-mail</p><div style="border:1px solid #aebcd0;padding:10px;background:white;border-radius:6px">&nbsp;</div>
+<p>Senha</p><div style="border:1px solid #aebcd0;padding:10px;background:white;border-radius:6px">&nbsp;</div>
+<p><span style="background:#285ad6;color:white;padding:10px 18px;border-radius:7px;display:inline-block">Criar minha conta</span></p>
+</div></div>
+
+<p>As duas interfaces solicitam as mesmas informações. A segunda utiliza
+conceitos conhecidos por quem deseja criar uma conta.</p>
+<h3 id="22-termos-técnicos-são-sempre-ruins">2.2. Termos técnicos são
+sempre ruins?</h3>
+<p>Não. A linguagem deve ser adequada ao público. Em um sistema hospitalar, termos como prontuário e triagem podem ser familiares aos profissionais de saúde, mas exigir explicação para pacientes.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Público</th>
+<th>Termos que podem ser familiares</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Profissionais de saúde</td>
+<td>Prontuário, triagem, prescrição</td>
+</tr>
+<tr class="even">
+<td>Profissionais de saúde</td>
+<td>Prontuário, triagem, prescrição</td>
+</tr>
+<tr class="odd">
+<td>Professores</td>
+<td>Turma, frequência, plano de aula</td>
+</tr>
+<tr class="even">
+<td>Clientes de uma loja</td>
+<td>Carrinho, pedido, entrega</td>
+</tr>
+<tr class="odd">
+<td>Passageiros</td>
+<td>Embarque, passagem, destino</td>
+</tr>
+</tbody>
+</table>
+<p>A pergunta não é se a palavra é técnica. A pergunta é se ela faz
+sentido para quem utiliza o sistema.</p>
+<hr />
+<section class="chapter"><span class="eyebrow">Heurística 02 · Material de estudo</span><h2 id="3-o-uso-de-ícones-nas-interfaces">3. O uso de ícones nas
+interfaces</h2></section>
+<p>Ícones são representações gráficas de objetos, conceitos ou ações.
+Eles ajudam o usuário a relacionar uma funcionalidade digital a algo que
+já conhece.</p>
+<p>A lupa representa a ideia de procurar. A lixeira representa
+descartar. Um carrinho representa reunir produtos antes de comprar.
+Essas relações ajudam a compreender a interface sem precisar aprender um
+vocabulário completamente novo.</p>
+<h3 id="31-exemplos-de-ícones-e-seus-significados">3.1. Exemplos de
+ícones e seus significados</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Ícone</th>
+<th>Objeto ou símbolo</th>
+<th>Uso comum</th>
+<th>Relação com o mundo real ou convenção</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/search.svg" width="30" height="30" alt="Lupa"></td>
+<td>Lupa</td>
+<td>Pesquisar</td>
+<td>A lupa permite examinar ou procurar algo.</td>
+</tr>
+<tr class="even">
+<td><img src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/house.svg" width="30" height="30" alt="Casa"></td>
+<td>Casa</td>
+<td>Início</td>
+<td>A casa representa um ponto de partida.</td>
+</tr>
+<tr class="odd">
+<td><img src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/trash-2.svg" width="30" height="30" alt="Lixeira"></td>
+<td>Lixeira</td>
+<td>Excluir</td>
+<td>Uma lixeira é utilizada para descartar objetos.</td>
+</tr>
+<tr class="even">
+<td><img src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/shopping-cart.svg" width="30" height="30" alt="Carrinho"></td>
+<td>Carrinho</td>
+<td>Carrinho de compras</td>
+<td>Reúne produtos antes do pagamento.</td>
+</tr>
+<tr class="odd">
+<td><img src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/calendar.svg" width="30" height="30" alt="Calendário"></td>
+<td>Calendário</td>
+<td>Agendar ou consultar datas</td>
+<td>Representa dias e compromissos.</td>
+</tr>
+<tr class="even">
+<td><img src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/camera.svg" width="30" height="30" alt="Câmera"></td>
+<td>Câmera</td>
+<td>Tirar foto</td>
+<td>Representa o equipamento fotográfico.</td>
+</tr>
+<tr class="odd">
+<td><img src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/printer.svg" width="30" height="30" alt="Impressora"></td>
+<td>Impressora</td>
+<td>Imprimir</td>
+<td>Representa o equipamento que produz documentos físicos.</td>
+</tr>
+<tr class="even">
+<td><img src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/phone.svg" width="30" height="30" alt="Telefone"></td>
+<td>Telefone</td>
+<td>Ligar</td>
+<td>Remete a uma chamada telefônica.</td>
+</tr>
+<tr class="odd">
+<td><img src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/mail.svg" width="30" height="30" alt="Envelope"></td>
+<td>Envelope</td>
+<td>Mensagens ou e-mail</td>
+<td>Remete à correspondência.</td>
+</tr>
+<tr class="even">
+<td><img src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/map-pin.svg" width="30" height="30" alt="Marcador de mapa"></td>
+<td>Marcador de mapa</td>
+<td>Localização</td>
+<td>Indica um lugar no mapa.</td>
+</tr>
+<tr class="odd">
+<td><img src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/pencil.svg" width="30" height="30" alt="Lápis"></td>
+<td>Lápis</td>
+<td>Editar</td>
+<td>Remete à escrita e alteração de conteúdo.</td>
+</tr>
+<tr class="even">
+<td><img src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/paperclip.svg" width="30" height="30" alt="Clipe"></td>
+<td>Clipe</td>
+<td>Anexar arquivo</td>
+<td>Remete a prender documentos juntos.</td>
+</tr>
+<tr class="odd">
+<td><img src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/folder.svg" width="30" height="30" alt="Pasta"></td>
+<td>Pasta</td>
+<td>Arquivos</td>
+<td>Remete à organização de documentos.</td>
+</tr>
+<tr class="even">
+<td><img src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/heart.svg" width="30" height="30" alt="Coração"></td>
+<td>Coração</td>
+<td>Favoritar ou curtir</td>
+<td>Representa preferência ou afeto, conforme o contexto.</td>
+</tr>
+<tr class="odd">
+<td><img src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/bell.svg" width="30" height="30" alt="Sino"></td>
+<td>Sino</td>
+<td>Notificações</td>
+<td>Remete a um aviso.</td>
+</tr>
+<tr class="even">
+<td><img src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/lock.svg" width="30" height="30" alt="Cadeado"></td>
+<td>Cadeado</td>
+<td>Proteção ou bloqueio</td>
+<td>Remete à restrição de acesso.</td>
+</tr>
+<tr class="odd">
+<td><img src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/key.svg" width="30" height="30" alt="Chave"></td>
+<td>Chave</td>
+<td>Acesso ou senha</td>
+<td>Remete à abertura de algo protegido.</td>
+</tr>
+<tr class="even">
+<td><img src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/credit-card.svg" width="30" height="30" alt="Cartão"></td>
+<td>Cartão</td>
+<td>Pagamento</td>
+<td>Representa um meio de pagamento.</td>
+</tr>
+<tr class="odd">
+<td><img src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/clock.svg" width="30" height="30" alt="Relógio"></td>
+<td>Relógio</td>
+<td>Horário ou histórico</td>
+<td>Remete à passagem do tempo.</td>
+</tr>
+<tr class="even">
+<td><img src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/settings.svg" width="30" height="30" alt="Engrenagem"></td>
+<td>Engrenagem</td>
+<td>Configurações</td>
+<td>Convenção digital associada ao ajuste de mecanismos.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Os símbolos acima são exemplos de associações comuns, não
+significados universais. As imagens dos ícones são carregadas pela
+internet; os nomes e descrições continuam disponíveis sem
+conexão.</em></p>
+<h3 id="32-quando-um-ícone-comunica-a-ação-errada">3.2. Quando um ícone
+comunica a ação errada</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Ícone utilizado</th>
+<th>Ação pretendida</th>
+<th>Problema</th>
+<th>Alternativa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Lixeira</td>
+<td>Salvar documento</td>
+<td>Sugere descarte</td>
+<td>Texto Salvar ou símbolo de salvamento familiar</td>
+</tr>
+<tr class="even">
+<td>Lupa</td>
+<td>Excluir produto</td>
+<td>Sugere pesquisa</td>
+<td>Lixeira + Excluir</td>
+</tr>
+<tr class="odd">
+<td>Carrinho</td>
+<td>Acessar configurações</td>
+<td>Sugere compra</td>
+<td>Engrenagem + Configurações</td>
+</tr>
+<tr class="even">
+<td>Câmera</td>
+<td>Abrir mensagens</td>
+<td>Sugere fotografia</td>
+<td>Envelope + Mensagens</td>
+</tr>
+<tr class="odd">
+<td>Cadeado</td>
+<td>Alterar foto de perfil</td>
+<td>Sugere proteção</td>
+<td>Câmera + Alterar foto</td>
+</tr>
+<tr class="even">
+<td>Calendário</td>
+<td>Entrar na conta</td>
+<td>Sugere datas</td>
+<td>Texto Entrar</td>
+</tr>
+</tbody>
+</table>
+<p>Um ícone pode ser visualmente bonito e ainda comunicar uma ação
+completamente diferente da esperada.</p>
+<h3 id="33-ícones-ambíguos">3.3. Ícones ambíguos</h3>
+<p>Nem todos os símbolos são compreendidos da mesma forma. Um coração
+pode representar curtidas, favoritos ou saúde. Um relógio pode
+representar horário, histórico ou temporizador. Um olho pode indicar
+visualização, prévia ou exibição de senha.</p>
+<div style="font-family:Arial,sans-serif;border:1px solid #dce5f2;border-radius:14px;padding:20px;margin:20px 0;color:#14243b;background:#f5f8fc">
+<p><strong>Sem contexto:</strong></p>
+<div style="display:flex;gap:30px;align-items:center;padding:15px;background:white;border:1px solid #dce5f2;border-radius:8px"><img width="28" alt="Coração" src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/heart.svg"><img width="28" alt="Relógio" src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/clock.svg"><img width="28" alt="Olho" src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/eye.svg"></div>
+<p><strong>Com contexto:</strong></p>
+<div style="display:flex;flex-wrap:wrap;gap:25px;align-items:center;padding:15px;background:white;border:1px solid #dce5f2;border-radius:8px"><span><img width="25" style="vertical-align:middle" alt="" src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/heart.svg"> Favoritos</span><span><img width="25" style="vertical-align:middle" alt="" src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/clock.svg"> Histórico de compras</span><span><img width="25" style="vertical-align:middle" alt="" src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/eye.svg"> Mostrar senha</span></div></div>
+
+<p>O texto ajuda a determinar qual significado do símbolo é relevante
+naquela situação. Não é obrigatório que todo ícone tenha texto visível,
+mas a familiaridade deve ser avaliada com o público. Controles que usam
+apenas ícones também precisam de um nome acessível para tecnologias
+assistivas.</p>
+<h3 id="34-ícones-que-sobreviveram-aos-objetos-físicos">3.4. Ícones que
+sobreviveram aos objetos físicos</h3>
+<p>O disquete é um exemplo interessante. Durante décadas, foi utilizado
+para armazenar arquivos. Seu desenho tornou-se uma convenção para a ação
+de salvar documentos, mesmo para pessoas que nunca utilizaram um
+disquete.</p>
+<p>Isso mostra que a familiaridade não vem apenas de objetos físicos:
+ela também pode ser construída pelo uso de outros sistemas. Contudo, um
+símbolo aprendido por uma geração pode não ser imediatamente
+compreensível por outra.</p>
+<h3 id="35-ícones-não-são-emojis">3.5. Ícones não são emojis</h3>
+<p>Ícones de interface são desenhados para comunicar funções. Emojis são
+caracteres utilizados principalmente para expressar ideias, emoções e
+objetos em mensagens. Embora possam compartilhar significados, não são
+equivalentes: a aparência de um emoji pode variar entre plataformas. Em
+uma interface profissional, escolha uma biblioteca de ícones adequada e
+avalie se cada símbolo representa a ação desejada.</p>
+<hr />
+<section class="chapter"><span class="eyebrow">Heurística 02 · Material de estudo</span><h2 id="4-metáforas-do-mundo-real">4. Metáforas do mundo real</h2></section>
+<p>Uma metáfora de interface relaciona uma experiência digital a um
+conceito conhecido pelo usuário. Ela ajuda a explicar como algo funciona
+sem precisar apresentar detalhes técnicos.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Conceito digital</th>
+<th>Referência conhecida</th>
+<th>O que a metáfora ajuda a compreender</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Carrinho de compras</td>
+<td>Carrinho de supermercado</td>
+<td>Reunir produtos antes de pagar</td>
+</tr>
+<tr class="even">
+<td>Lixeira digital</td>
+<td>Lixeira física</td>
+<td>Descartar arquivos e, quando disponível, recuperá-los antes da
+exclusão definitiva</td>
+</tr>
+<tr class="odd">
+<td>Pastas de arquivos</td>
+<td>Pastas de documentos</td>
+<td>Agrupar documentos por assunto</td>
+</tr>
+<tr class="even">
+<td>Área de trabalho</td>
+<td>Mesa de trabalho</td>
+<td>Acessar ferramentas e documentos</td>
+</tr>
+<tr class="odd">
+<td>Caixa de entrada</td>
+<td>Caixa de correspondência</td>
+<td>Receber novas mensagens</td>
+</tr>
+<tr class="even">
+<td>Álbum de fotos</td>
+<td>Álbum físico</td>
+<td>Reunir fotografias</td>
+</tr>
+<tr class="odd">
+<td>Estante virtual</td>
+<td>Estante de livros</td>
+<td>Organizar uma coleção de leitura</td>
+</tr>
+<tr class="even">
+<td>Agenda digital</td>
+<td>Agenda de papel</td>
+<td>Consultar compromissos por data</td>
+</tr>
+<tr class="odd">
+<td>Carteira digital</td>
+<td>Carteira física</td>
+<td>Reunir meios de pagamento</td>
+</tr>
+<tr class="even">
+<td>Quadro Kanban</td>
+<td>Quadro de tarefas com cartões</td>
+<td>Visualizar tarefas agrupadas por etapa</td>
+</tr>
+<tr class="odd">
+<td>Marcadores de leitura</td>
+<td>Marcador de página</td>
+<td>Retomar ou guardar conteúdo</td>
+</tr>
+</tbody>
+</table>
+<h3 id="41-não-é-necessário-imitar-tudo-do-mundo-físico">4.1. Não é
+necessário imitar tudo do mundo físico</h3>
+<p>Um calendário digital não precisa parecer feito de papel. Uma loja
+virtual não precisa reproduzir corredores de supermercado. O importante
+é preservar a lógica que ajuda o usuário a compreender a tarefa.</p>
+<p>O <strong>skeuomorfismo</strong> é uma abordagem visual que reproduz
+características de objetos físicos, como um bloco de notas digital com
+textura de papel. Ele pode ajudar no reconhecimento, mas não é uma
+exigência da segunda heurística. Um calendário minimalista ainda pode
+respeitar perfeitamente a lógica de uma agenda.</p>
+<p>Uma metáfora também pode criar expectativas erradas. Se um sistema
+usa uma lixeira que apaga imediatamente os arquivos, não deve sugerir
+que existe recuperação quando ela não existe.</p>
+<section class="chapter"><span class="eyebrow">Heurística 02 · Material de estudo</span><h2 id="5-modelos-mentais">5. Modelos mentais</h2></section>
+<p>Um modelo mental é a ideia que uma pessoa constrói sobre como algo
+funciona, com base em experiências anteriores.</p>
+<p>Quando alguém entra em uma loja virtual, provavelmente espera
+encontrar produtos, selecionar itens, consultar o carrinho, informar a
+entrega e pagar. Essa expectativa não surgiu porque a pessoa estudou a
+arquitetura do sistema, mas porque já conhece processos de compra.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Situação</th>
+<th>Expectativa provável do usuário</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tocar na foto de um produto</td>
+<td>Ver a foto ampliada ou detalhes</td>
+</tr>
+<tr class="even">
+<td>Tocar em uma categoria de produtos</td>
+<td>Encontrar os produtos daquela categoria</td>
+</tr>
+<tr class="odd">
+<td>Selecionar uma data em uma agenda</td>
+<td>Consultar horários daquela data</td>
+</tr>
+<tr class="even">
+<td>Tocar em uma conversa</td>
+<td>Abrir as mensagens correspondentes</td>
+</tr>
+<tr class="odd">
+<td>Arrastar um mapa</td>
+<td>Explorar outra região</td>
+</tr>
+<tr class="even">
+<td>Selecionar uma pasta</td>
+<td>Ver os arquivos que estão nela</td>
+</tr>
+<tr class="odd">
+<td>Tocar na imagem do perfil</td>
+<td>Ver o perfil ou opções relacionadas à conta</td>
+</tr>
+</tbody>
+</table>
+<p>Essas expectativas dependem do contexto. Não devem ser tratadas como
+comportamentos universais sem observar usuários reais.</p>
+<section class="chapter"><span class="eyebrow">Heurística 02 · Material de estudo</span><h2 id="6-ordem-natural-e-lógica-das-informações">6. Ordem natural e
+lógica das informações</h2></section>
+<p>A segunda heurística não se limita a palavras e imagens. Ela também
+orienta a organização do processo conforme a lógica da tarefa realizada
+pelo usuário.</p>
+<h3 id="61-compra-em-uma-loja-virtual">6.1. Compra em uma loja
+virtual</h3>
+<div style="font-family:Arial,sans-serif;background:#f5f8fc;border:1px solid #dce5f2;padding:20px;border-radius:14px;color:#14243b;margin:20px 0">
+<strong style="color:#a83245">Fluxo pouco natural</strong><p style="line-height:2.5">Pagamento → Escolha dos produtos → Endereço → Conferência do pedido</p>
+<hr style="border:0;border-top:1px solid #dce5f2">
+<strong style="color:#087f8c">Fluxo mais próximo da tarefa real</strong><p style="line-height:2.5">Escolha dos produtos → Carrinho → Entrega → Conferência e pagamento</p></div>
+
+<p>O segundo fluxo permite compreender o que será comprado e quanto
+custará antes de pagar.</p>
+<h3 id="62-outros-exemplos-de-organização">6.2. Outros exemplos de
+organização</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Sistema</th>
+<th>Ordem natural possível</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Agendamento médico</td>
+<td>Especialidade → Profissional → Data e horário → Confirmação</td>
+</tr>
+<tr class="even">
+<td>Compra de passagem</td>
+<td>Origem e destino → Data → Horário → Passageiros → Pagamento</td>
+</tr>
+<tr class="odd">
+<td>Delivery</td>
+<td>Restaurante → Refeição → Carrinho → Entrega → Pagamento</td>
+</tr>
+<tr class="even">
+<td>Matrícula em curso</td>
+<td>Escolha do curso → Consulta das condições → Dados pessoais →
+Inscrição</td>
+</tr>
+<tr class="odd">
+<td>Reserva de hotel</td>
+<td>Destino → Datas → Quarto → Dados da reserva → Confirmação</td>
+</tr>
+<tr class="even">
+<td>Aplicativo de fotos</td>
+<td>Escolher ou tirar foto → Editar → Salvar ou compartilhar</td>
+</tr>
+<tr class="odd">
+<td>Cadastro de endereço</td>
+<td>CEP → Rua → Número → Complemento → Bairro, cidade e estado, conforme
+a solução</td>
+</tr>
+</tbody>
+</table>
+<p>Esses fluxos são exemplos, não sequências obrigatórias. A ordem deve
+acompanhar a tarefa e as necessidades reais de quem utiliza o
+produto.</p>
+<section class="chapter"><span class="eyebrow">Heurística 02 · Material de estudo</span><h2 id="7-formatos-de-informação-e-contexto-cultural">7. Formatos de
+informação e contexto cultural</h2></section>
+<p>Uma informação pode estar tecnicamente correta e ainda ser difícil de
+interpretar por estar em um formato pouco familiar.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Informação</th>
+<th>Formato pouco familiar em um aplicativo brasileiro de uso geral</th>
+<th>Alternativa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Data</td>
+<td>2026-11-25</td>
+<td>25/11/2026 ou 25 de novembro de 2026</td>
+</tr>
+<tr class="even">
+<td>Preço</td>
+<td>BRL 1299.90</td>
+<td>R$ 1.299,90</td>
+</tr>
+<tr class="odd">
+<td>Horário</td>
+<td>08:30 PM</td>
+<td>20h30</td>
+</tr>
+<tr class="even">
+<td>Distância</td>
+<td>3.1 mi</td>
+<td>Aproximadamente 5 km</td>
+</tr>
+<tr class="odd">
+<td>Temperatura</td>
+<td>86 °F</td>
+<td>30 °C</td>
+</tr>
+<tr class="even">
+<td>Peso</td>
+<td>2.2 lb</td>
+<td>Aproximadamente 1 kg</td>
+</tr>
+<tr class="odd">
+<td>Duração</td>
+<td>5400 segundos</td>
+<td>1h30min</td>
+</tr>
+<tr class="even">
+<td>Código de situação</td>
+<td>Expedição concluída</td>
+<td>Pedido enviado</td>
+</tr>
+<tr class="odd">
+<td>Identificação de cliente</td>
+<td>Registro 5847</td>
+<td>Nome do cliente, quando a tarefa permitir</td>
+</tr>
+</tbody>
+</table>
+<p>Um sistema utilizado internacionalmente deve considerar idioma,
+unidades, moedas e convenções locais. Traduzir palavras é apenas uma
+parte desse processo.</p>
+<section class="chapter"><span class="eyebrow">Heurística 02 · Material de estudo</span><h2 id="8-exemplos-aplicados-a-diferentes-sistemas">8. Exemplos
+aplicados a diferentes sistemas</h2></section>
+<table>
+<thead>
+<tr class="header">
+<th>Contexto</th>
+<th>Problema observado</th>
+<th>Proposta de melhoria</th>
+<th>Por que se relaciona à segunda heurística?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Loja virtual</td>
+<td>Menu chamado Entidades</td>
+<td>Produtos</td>
+<td>Usa o vocabulário da compra</td>
+</tr>
+<tr class="even">
+<td>Banco digital</td>
+<td>Botão Executar operação TED/Pix sem distinguir as opções</td>
+<td>Transferir via Pix ou TED</td>
+<td>Apresenta ações financeiras identificáveis</td>
+</tr>
+<tr class="odd">
+<td>Escola</td>
+<td>Campo Quantidade de eventos de ausência</td>
+<td>Número de faltas</td>
+<td>Usa um termo familiar ao estudante</td>
+</tr>
+<tr class="even">
+<td>Escola</td>
+<td>Área chamada Registros acadêmicos consolidados</td>
+<td>Minhas notas e frequência</td>
+<td>Explica o conteúdo na linguagem do aluno</td>
+</tr>
+<tr class="odd">
+<td>Saúde</td>
+<td>Botão Criar evento temporal</td>
+<td>Agendar consulta</td>
+<td>Representa a tarefa do paciente</td>
+</tr>
+<tr class="even">
+<td>Saúde</td>
+<td>Ícone de engrenagem para marcar consulta</td>
+<td>Calendário + Agendar consulta</td>
+<td>Relaciona agendamento a datas</td>
+</tr>
+<tr class="odd">
+<td>Restaurante</td>
+<td>Categoria Recursos nutricionais</td>
+<td>Cardápio</td>
+<td>Usa um conceito familiar</td>
+</tr>
+<tr class="even">
+<td>Restaurante</td>
+<td>Botão Submeter entidade comanda</td>
+<td>Fazer pedido</td>
+<td>Representa a ação que o cliente deseja</td>
+</tr>
+<tr class="odd">
+<td>Transporte</td>
+<td>Campo Coordenada de destino</td>
+<td>Para onde você vai?</td>
+<td>Apresenta a tarefa na linguagem cotidiana</td>
+</tr>
+<tr class="even">
+<td>Hotel</td>
+<td>Opção Unidade habitacional</td>
+<td>Escolher quarto</td>
+<td>Utiliza um conceito familiar ao hóspede</td>
+</tr>
+<tr class="odd">
+<td>Rede social</td>
+<td>Botão Criar registro multimídia</td>
+<td>Publicar foto</td>
+<td>Comunica a intenção da pessoa</td>
+</tr>
+<tr class="even">
+<td>Aplicativo de fotos</td>
+<td>Ícone de envelope para recortar</td>
+<td>Ícone de recorte + Recortar</td>
+<td>Aproxima o símbolo da ação de edição</td>
+</tr>
+<tr class="odd">
+<td>Biblioteca</td>
+<td>Menu Entidades bibliográficas</td>
+<td>Livros</td>
+<td>Usa o conceito conhecido pelo leitor</td>
+</tr>
+<tr class="even">
+<td>Estoque</td>
+<td>Disponibilidade quantitativa</td>
+<td>Quantidade em estoque</td>
+<td>Utiliza palavras familiares ao público</td>
+</tr>
+<tr class="odd">
+<td>Atendimento</td>
+<td>Seção Tickets, para um público que desconhece o termo</td>
+<td>Minhas solicitações</td>
+<td>Aproxima o vocabulário do público</td>
+</tr>
+<tr class="even">
+<td>Academia</td>
+<td>Treino apresentado apenas como EX_001</td>
+<td>Agachamento</td>
+<td>Usa o nome reconhecível do exercício</td>
+</tr>
+</tbody>
+</table>
+<section class="chapter"><span class="eyebrow">Heurística 02 · Material de estudo</span><h2 id="9-exercício-de-análise--identifique-o-problema">9. Exercício
+de análise — Identifique o problema</h2></section>
+<p>Para cada situação, explique o que pode causar confusão, proponha uma
+melhoria e relacione sua resposta à segunda heurística.</p>
+<ol type="1">
+<li>Um aplicativo de delivery utiliza o botão “Inicializar aquisição
+alimentar”.</li>
+<li>Uma loja utiliza o ícone de uma lixeira para adicionar produtos aos
+favoritos.</li>
+<li>Um aplicativo de saúde exibe datas no formato
+<code>2026-11-25</code> para pacientes acostumados a
+<code>25/11/2026</code>.</li>
+<li>Um sistema escolar apresenta o menu “Controle de assiduidade discente”.</li>
+<li>Um site de viagens solicita o pagamento antes de informar o destino
+e o horário.</li>
+<li>Uma rede social utiliza apenas um ícone de relógio para representar
+mensagens arquivadas.</li>
+<li>Um aplicativo de fotos utiliza a palavra “Crop” em uma interface
+voltada ao público brasileiro que desconhece inglês.</li>
+<li>Um sistema de biblioteca solicita o código interno do livro, embora
+o leitor só conheça seu título.</li>
+<li>Um aplicativo de academia apresenta exercícios por códigos, sem seus
+nomes.</li>
+<li>Um aplicativo de mensagens utiliza uma pasta chamada “Caixa de
+saída” para receber novas mensagens.</li>
+</ol>
+<section class="chapter"><span class="eyebrow">Heurística 02 · Material de estudo</span><h2 id="10-atividade-prática--redesign-no-figma">10. Atividade prática —
+Redesign no Figma</h2></section>
+<p>A atividade será individual. Escolha um site ou aplicativo existente,
+ou uma interface do seu Projeto Integrador. Selecione uma tarefa
+específica, como encontrar um produto, realizar um cadastro, agendar uma
+consulta ou consultar informações.</p>
+<h3 id="etapa-01--identificação">Etapa 01 — Identificação</h3>
+<p>Registre o nome do sistema, seu público-alvo, a tarefa escolhida e
+uma captura da interface original.</p>
+<h3 id="etapa-02--análise">Etapa 02 — Análise</h3>
+<p>Identifique pelo menos três problemas relacionados exclusivamente à
+segunda heurística. Observe se os textos são compreensíveis, se os
+ícones representam suas funções, se as informações utilizam formatos
+familiares e se o processo segue uma ordem lógica.</p>
+<h3 id="etapa-03--redesign">Etapa 03 — Redesign</h3>
+<p>Crie uma proposta de melhoria no Figma. Preserve a finalidade da
+interface e modifique os elementos que causam confusão. Não basta trocar
+cores ou adicionar ícones: cada mudança precisa resolver um problema de
+comunicação com o usuário.</p>
+<h3 id="etapa-04--teste-com-um-colega">Etapa 04 — Teste com um
+colega</h3>
+<p>Apresente sua proposta sem explicar o significado dos ícones ou
+botões. Peça ao colega que indique como realizaria a tarefa, o que
+entende de cada símbolo relevante e o que espera que aconteça ao
+selecionar as opções.</p>
+<p>Se o protótipo não for interativo, registre a compreensão e a
+intenção de clique, sem afirmar que a tarefa foi concluída de fato.</p>
+<h3 id="etapa-05--registro-e-revisão">Etapa 05 — Registro e revisão</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Problema observado</th>
+<th>Alteração proposta</th>
+<th>Justificativa</th>
+<th>Resultado do teste</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Botão chamado Persistir</td>
+<td>Salvar alterações</td>
+<td>Utiliza uma expressão familiar</td>
+<td>O colega identificou a ação sem ajuda</td>
+</tr>
+<tr class="even">
+<td>Ícone de engrenagem para agendar</td>
+<td>Calendário + Agendar consulta</td>
+<td>Relaciona agendamento a datas</td>
+<td>Preencher após o teste</td>
+</tr>
+<tr class="odd">
+<td>Data em formato pouco familiar</td>
+<td>25/11/2026</td>
+<td>Respeita o formato esperado pelo público</td>
+<td>Preencher após o teste</td>
+</tr>
+</tbody>
+</table>
+<p>O primeiro resultado é ilustrativo. Registre apenas aquilo que
+realmente observou no seu teste.</p>
+<h3 id="entrega">Entrega</h3>
+<p>Organize o projeto em três áreas no Figma: Original, Redesign e
+Análise. Entregue o nome completo e o link do projeto com permissão de
+visualização, conforme o canal indicado para a turma.</p>
+<section class="chapter"><span class="eyebrow">Heurística 02 · Material de estudo</span><h2 id="11-checklist-para-aplicar-ao-projeto-integrador">11. Checklist
+para aplicar ao Projeto Integrador</h2></section>
+<ul class="task-list">
+<li><label><input type="checkbox" />Os nomes dos menus são
+compreensíveis para o público-alvo?</label></li>
+<li><label><input type="checkbox" />Os botões descrevem ações que o
+usuário reconhece?</label></li>
+<li><label><input type="checkbox" />Os termos técnicos desnecessários foram substituídos por palavras familiares?</label></li>
+<li><label><input type="checkbox" />Os ícones representam conceitos
+familiares?</label></li>
+<li><label><input type="checkbox" />Os símbolos ambíguos possuem
+contexto ou rótulo adequado?</label></li>
+<li><label><input type="checkbox" />As metáforas respeitam as
+expectativas que criam?</label></li>
+<li><label><input type="checkbox" />As datas, horários, preços e
+unidades são adequados ao público?</label></li>
+<li><label><input type="checkbox" />As etapas seguem uma ordem natural
+para a tarefa?</label></li>
+<li><label><input type="checkbox" />Os agrupamentos de informações fazem
+sentido para quem utiliza o sistema?</label></li>
+<li><label><input type="checkbox" />Outra pessoa conseguiu interpretar a
+interface sem explicações do desenvolvedor?</label></li>
+</ul>
+<section class="chapter"><span class="eyebrow">Heurística 02 · Material de estudo</span><h2 id="12-glossário">12. Glossário</h2></section>
+<p><strong>Ícone:</strong> representação gráfica de uma ação, objeto ou
+conceito.</p>
+<p><strong>Metáfora de interface:</strong> associação entre uma
+funcionalidade digital e um conceito familiar.</p>
+<p><strong>Modelo mental:</strong> entendimento que o usuário constrói
+sobre o funcionamento de algo a partir de suas experiências.</p>
+<p><strong>Convenção:</strong> associação ou padrão aprendido e
+reconhecido por determinado público.</p>
+<p><strong>Rótulo:</strong> texto que identifica um campo, controle ou
+opção.</p>
+<p><strong>Localização:</strong> adaptação do produto a um idioma,
+região e suas convenções culturais.</p>
+<p><strong>Skeuomorfismo:</strong> abordagem visual que reproduz
+características de objetos físicos em interfaces digitais.</p>
+<section class="chapter"><span class="eyebrow">Heurística 02 · Material de estudo</span><h2 id="13-o-que-você-precisa-levar-desta-aula">13. O que você precisa
+levar desta aula</h2></section>
+<p>Aplicar a segunda heurística significa aproximar a lógica do sistema
+da lógica de quem utiliza o produto. Uma interface não deve obrigar
+alguém a aprender vocabulário técnico, decifrar símbolos ou
+compreender processos internos para executar tarefas cotidianas.</p>
+<p>Um bom ícone não é apenas bonito. Um bom texto não é apenas curto. Um
+bom fluxo não é apenas rápido. Todos precisam fazer sentido para o
+público e para a tarefa.</p>
+<blockquote>
+<p>Antes de perguntar se uma interface está bonita, pergunte se ela
+comunica aquilo que o usuário precisa compreender.</p>
+</blockquote>
+<hr />
+<h2 id="referências-de-estudo">Referências de estudo</h2>
+<ul>
+<li>Material-base: UC16 — Aula 02 | Apostila ilustrada, seção 5,
+Correspondência entre o sistema e o mundo real.</li>
+<li>Nielsen Norman Group. <a
+href="https://www.nngroup.com/articles/ten-usability-heuristics/">10
+Usability Heuristics for User Interface Design</a>.</li>
+<li>Lucide. <a href="https://lucide.dev/">Biblioteca de ícones</a>.
+Ícones utilizados nos exemplos visuais.</li>
+</ul>
+<p>Material complementar à Aula 02 — UC16 — Técnico em Desenvolvimento
+de Sistemas. Os exemplos, exercícios e demonstrações são ilustrativos,
+elaborados para aprofundar a segunda heurística.</p>
+</main></body></html>
